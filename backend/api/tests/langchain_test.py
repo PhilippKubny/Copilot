@@ -25,10 +25,11 @@ llm = AzureChatOpenAI(
 
 # # Print the response
 # print(r.content)
+promt_template = 'What interesting things can I make with a {input}?'
 
 promt = PromptTemplate(
     input_variables=['input'],
-    template='What interesting things can I make with a {input}?'
+    template=promt_template
 )
 
 chain = LLMChain(llm=llm, prompt=promt)
