@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #5d54a4; /* Dark purple background */
+  background: #1d0731; /* Lila Smokey-Farbverlauf */
   color: white;
   display: flex;
   justify-content: center;
@@ -12,7 +12,7 @@ body {
 
 .chat-container {
   width: 100%;
-  max-width: 350px;
+  max-width: 50%;
   margin: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
@@ -54,12 +54,104 @@ body {
   background-color: #4e4c67; /* Footer color */
   padding: 10px;
 }
-
+/*
 .input-message {
   width: 100%;
   padding: 10px;
   border: none;
   border-radius: 5px;
+}
+*/
+.message-form {
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.message-input {
+  z-index: 1000;
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border: 2px solid #555;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #ddd;
+  background-color: #222;
+}
+
+.message-input:focus {
+  outline: none;
+  border-color: #777;
+}
+
+.send-button {
+  z-index: 1000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #5d54a4;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: #6c63ff;
+}
+
+.send-button:active {
+  transform: scale(0.98);
+}
+.message-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.message-input {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border: 2px solid #555;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #ddd;
+  background-color: #222;
+}
+
+.message-input:focus {
+  outline: none;
+  border-color: #777;
+}
+
+.send-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #5d54a4;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: #51498b;
+}
+
+.send-button:active {
+  transform: scale(0.98);
 }
 
 .clear-button {
@@ -72,4 +164,16 @@ body {
   color: white;
   padding: 10px;
   cursor: pointer;
+}
+
+.footer-main  {
+  z-index: 100;
+  width: 100%;
+  height: 33%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgb(104, 17, 198,1), rgba(0,0,0,0)); /* Farbverlauf von Schwarz zur Transparenz */
+  /* Weitere Stile hier */
 }
