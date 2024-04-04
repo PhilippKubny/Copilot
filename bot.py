@@ -51,7 +51,10 @@ else:
     db.write_data(data)
 
 
-st.title(f"{data['user_data']['user_name']}'s copilot")
+try:
+    st.title(f"{data['user_data']['user_name']}'s copilot")
+except:
+    st.title(f"Your copilot")
 st.image('qhack.png')
 # Initialize chat history
 if "messages" not in st.session_state:
