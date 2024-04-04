@@ -4,3 +4,5 @@ langchain==0.1.14
 langchain-openai==0.1.1
 langchain-community==0.0.31
 python-dotenv==1.0.1
+streamlit-calendar==1.2.0
+
