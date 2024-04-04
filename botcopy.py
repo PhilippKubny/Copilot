@@ -1,6 +1,7 @@
 import streamlit as st
 from collections import Counter
 from st_pages import add_page_title, show_pages_from_config
+from db_handler import JSONDatabase
 
 add_page_title()
 
@@ -81,6 +82,12 @@ def main():
             st.write(f"Your primary learning preference is: {primary_preference}")
         
         st.write(f"Your current level of knowledge on the subject is: {knowledge_answer}")
+
+        db = JSONDatabase('db.json')
+        data = db.read_data()
+        data["filled_out_form"] = True
+        db.write_data(data)
+
 
 if __name__ == "__main__":
     main()

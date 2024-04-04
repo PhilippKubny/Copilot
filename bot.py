@@ -5,6 +5,7 @@ from langchain.chains.llm import LLMChain
 from langchain.prompts import PromptTemplate
 import os
 from dotenv import load_dotenv
+from db_handler import JSONDatabase
 
 def get_response_from_input(user_input) -> str:
     llm = AzureChatOpenAI(
@@ -27,10 +28,23 @@ def get_response_from_input(user_input) -> str:
 
 show_pages_from_config()
 
+# Loading the environment
 if load_dotenv():
     print("Found Azure OpenAI Endpoint: " + os.getenv("AZURE_OPENAI_ENDPOINT"))
 else: 
     print("No file .env found")
+
+# Initialize database
+db = JSONDatabase('db.json')
+if db.read_data():
+    print("not first launch")
+else:
+    # Setting up database
+    print('first launch')
+    data = {}
+    data['filled_out_form'] = False
+    db.write_data(data)
+
 
 st.title("Manu's copilot")
 
