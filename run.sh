@@ -1,5 +1,5 @@
 #!bin/bash
-
+# Test approach to get the azure web app working
 # Pfad zum alternativen Konfigurationsordner
 CONFIG_DIR="streamlit/"
 
