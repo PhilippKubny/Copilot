@@ -1,3 +1,7 @@
 {
-    "filled_out_form": true
+    "filled_out_form": true,
+    "user_data": {
+        "primary_preference": "Visual",
+        "knowledge": "Novice"
+    }
 }

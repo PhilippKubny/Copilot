@@ -86,6 +86,7 @@ def main():
         db = JSONDatabase('db.json')
         data = db.read_data()
         data["filled_out_form"] = True
+        data["user_data"] = {"primary_preference": f"{primary_preference}", "knowledge": f"{knowledge_answer.split(' ')[0]}"}
         db.write_data(data)
 
 
