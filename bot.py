@@ -47,7 +47,7 @@ else:
 
 
 st.title("Manu's copilot")
-
+st.image('qhack.png')
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
