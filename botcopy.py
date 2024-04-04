@@ -54,8 +54,8 @@ def calculate_vark_results(answers):
     return vark_results, learning_classification
 
 def main():
-    st.title("VARK Questionnaire")
-    st.write("## Instructions: Consider how you generally learn best. Choose ONE answer per question.")
+    st.title("Learner Profile")
+    st.write("## Instructions: Consider how you generally learn best. Choose one answer per question.")
 
     answers = {}
 
