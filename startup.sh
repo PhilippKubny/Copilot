@@ -16,4 +16,4 @@ if [ -d "$CONFIG_DIR" ]; then
 fi
 
 # Starten der Streamlit-App
-#streamlit run bot_page.py
+python -m streamlit run bot_page.py --server.port 8000 --server.address 0.0.0.0
