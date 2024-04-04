@@ -1,5 +1,5 @@
 #!bin/bash
-echo "test"
+
 # Pfad zum alternativen Konfigurationsordner
 CONFIG_DIR="streamlit/"
 
