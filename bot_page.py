@@ -1,5 +1,5 @@
 import streamlit as st
-from st_pages import show_pages_from_config, add_page_title
+from st_pages import show_pages_from_config, add_page_title,show_pages, Page
 from langchain_openai import AzureChatOpenAI
 from langchain.chains.llm import LLMChain
 from langchain.prompts import PromptTemplate
@@ -30,7 +30,13 @@ def get_response_from_input(user_input) -> str:
 
     return response['text']
 
-show_pages_from_config()
+
+show_pages([
+    Page("bot_page.py", "Copilot", "🏠"),
+    Page("pages/user_profile_form_page.py", "User profile", ":books:"),
+    Page("pages/calendar_page.py", "Calendar", ":calendar:")
+])
+
 
 if 'env_loaded' not in st.session_state:
     # Loading the environment
