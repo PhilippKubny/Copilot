@@ -1,0 +1,9 @@
+[[pages]]
+path="bot.py"
+name="Home"
+icon="🏠"
+
+[[pages]]
+path="botcopy.py"
+name="LearnerProfileQuestionnaire"
+icon=":books:"

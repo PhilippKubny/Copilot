@@ -1,4 +1,5 @@
 import streamlit as st
+from st_pages import show_pages_from_config, add_page_title
 from langchain_openai import AzureChatOpenAI
 from langchain.chains.llm import LLMChain
 from langchain.prompts import PromptTemplate
@@ -24,6 +25,7 @@ def get_response_from_input(user_input) -> str:
 
     return response['text']
 
+show_pages_from_config()
 
 if load_dotenv():
     print("Found Azure OpenAI Endpoint: " + os.getenv("AZURE_OPENAI_ENDPOINT"))

@@ -1,5 +1,8 @@
 import streamlit as st
 from collections import Counter
+from st_pages import add_page_title, show_pages_from_config
+
+add_page_title()
 
 # Define the questionnaire with VARK categories tagged properly in the options.
 questions = {
