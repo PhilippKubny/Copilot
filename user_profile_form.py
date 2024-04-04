@@ -85,11 +85,13 @@ def main():
         
         st.write(f"Your current level of knowledge on the subject is: {knowledge_answer}")
 
-        db = JSONDatabase('db.json')
-        data = db.read_data()
+        if "db" not in st.session_state:
+            st.session_state.db = JSONDatabase('db.json')
+        data = st.session_state.db.read_data()
         data["filled_out_form"] = True
         data["user_data"] = {"user_name": f"{user_name}","primary_preference": f"{primary_preference}", "knowledge": f"{knowledge_answer.split(' ')[0]}"}
-        db.write_data(data)
+        st.session_state.db.write_data(data)
+
 
 
 if __name__ == "__main__":

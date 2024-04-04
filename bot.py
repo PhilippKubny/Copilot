@@ -13,7 +13,7 @@ def get_response_from_input(user_input) -> str:
         api_key=os.getenv('AZURE_OPENAI_API_KEY')
     )
 
-    data = db.read_data()
+    data = st.session_state.db.read_data()
 
     template = f"""You are a helful copilot for a student. This students primary learning preference is 
                     {data['user_data']['primary_preference']}. Make sure to take their preference into account but not only that medium.
@@ -39,16 +39,15 @@ else:
     print("No file .env found")
 
 # Initialize database
-db = JSONDatabase('db.json')
-if db.read_data():
-    data = db.read_data()
-    print("not first launch")
+if "db" not in st.session_state:
+    st.session_state.db = JSONDatabase('db.json')
+if st.session_state.db.read_data():
+    data = st.session_state.db.read_data()
 else:
     # Setting up database
-    print('first launch')
     data = {}
     data['filled_out_form'] = False
-    db.write_data(data)
+    st.session_state.db.write_data(data)
 
 
 try:
