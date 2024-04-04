@@ -92,6 +92,7 @@ def main():
         data["user_data"] = {"user_name": f"{user_name}","primary_preference": f"{primary_preference}", "knowledge": f"{knowledge_answer.split(' ')[0]}"}
         st.session_state.db.write_data(data)
 
+        # st.switch_page()
 
 
 if __name__ == "__main__":

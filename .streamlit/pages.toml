@@ -1,14 +1,14 @@
 [[pages]]
-path="bot.py"
+path="bot_page.py"
 name="Copilot"
 icon="🏠"
 
 [[pages]]
-path="user_profile_form.py"
+path="pages/user_profile_form_page.py"
 name="User Profile"
 icon=":books:"
 
 [[pages]]
-path="calendar.py"
+path="pages/calendar_page.py"
 name="Calendar"
 icon=":calendar:"
