@@ -16,7 +16,7 @@ def get_response_from_input(user_input) -> str:
     data = db.read_data()
 
     template = f"""You are a helful copilot for a student. This students primary learning preference is 
-                    {data['user_data']['primary_preference']}. Please try to explain it in a way that it fits their preference.
+                    {data['user_data']['primary_preference']}. Make sure to take their preference into account but not only that medium.
                     Furthermore his knowledge on the learning subject is at {data['user_data']['knowledge']} level. Can you anwer the following question:""" + '{input}'
     
     promt_template = PromptTemplate(
