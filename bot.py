@@ -41,6 +41,7 @@ else:
 # Initialize database
 db = JSONDatabase('db.json')
 if db.read_data():
+    data = db.read_data()
     print("not first launch")
 else:
     # Setting up database
@@ -50,7 +51,7 @@ else:
     db.write_data(data)
 
 
-st.title("Manu's copilot")
+st.title(f"{data['user_data']['user_name']}'s copilot")
 st.image('qhack.png')
 # Initialize chat history
 if "messages" not in st.session_state:
