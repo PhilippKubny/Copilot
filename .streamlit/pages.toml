@@ -1,11 +1,11 @@
 [[pages]]
 path="bot.py"
-name="Home"
+name="Copilot"
 icon="🏠"
 
 [[pages]]
-path="botcopy.py"
-name="LearnerProfileQuestionnaire"
+path="user_profile_form.py"
+name="User Profile"
 icon=":books:"
 
 [[pages]]
