@@ -32,11 +32,14 @@ def get_response_from_input(user_input) -> str:
 
 show_pages_from_config()
 
-# Loading the environment
-if load_dotenv():
-    print("Found Azure OpenAI Endpoint: " + os.getenv("AZURE_OPENAI_ENDPOINT"))
-else: 
-    print("No file .env found")
+if 'env_loaded' not in st.session_state:
+    # Loading the environment
+    if load_dotenv():
+        print("Found Azure OpenAI Endpoint: " + os.getenv("AZURE_OPENAI_ENDPOINT"))
+        st.session_state.env_loaded = True
+    else: 
+        print("No file .env found")
+        st.session_state.env_loaded = False
 
 # Initialize database
 if "db" not in st.session_state:
@@ -74,10 +77,17 @@ if prompt:
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-    response = get_response_from_input(prompt)
+    # Check wheter the user filled out the form
+    data = st.session_state.db.read_data()
+    if data['filled_out_form']:
+        response = get_response_from_input(prompt)
+    else:
+        response = "Please complete the User Profile Form"
+
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
         st.markdown(response)
+        
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
 

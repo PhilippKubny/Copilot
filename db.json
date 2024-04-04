@@ -1,3 +1,8 @@
 {
-    "filled_out_form": false
+    "filled_out_form": true,
+    "user_data": {
+        "user_name": "Manuel",
+        "primary_preference": "Visual",
+        "knowledge": "Novice"
+    }
 }
