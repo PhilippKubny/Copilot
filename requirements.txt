@@ -1,1 +1,6 @@
 streamlit==1.32.2
+st_pages==0.4.5
+langchain==0.1.14
+langchain-openai==0.1.1
+langchain-community==0.0.31
+python-dotenv==1.0.1
